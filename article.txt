@@ -1,0 +1,29 @@
+In order to facilitate Android developers to analyze the entire system platform or all the information after a certain APP has been running for a period of time, Google has developed the adb bugreport tool. Developers can use the adb bugreport command to get all the logs of the system running information of the .
+
+The command is as follows:
+
+adb bugreport> bugreport_out.txt
+
+All log information is output to the bugreport_out.txt file.
+
+Of course, obtaining log information is only the first step. Because the finished bugreport command generates a file might find that there are a dozen M , to analyze a dozen M of txt file is simply a nightmare. So Google has developed a battery historian analysis tool specifically for systems above 5.0 .
+
+Proceed as follows:
+
+1.Download chkbugreport.jar from jar dir
+
+2. Get system log information
+adb bugreport > bugreport.txt
+
+or 
+adb bugreport report.zip then it will get the whole zip out of which if you will extract it you will get bugreport.txt file so you can use it for further
+
+3. Parse log file
+Execute the following commands in the command line:
+
+D:\Temp>java -jar C:\Users\budhdi\Downloads\chkbugreport-0.111.jar D:\Temp\bugreport.txt
+
+After executing this command, a bugreport_out folder is generated in the current directory . This is the analysis result
+
+You can view index .html, where the log is classified and displayed. You will also get the all htm view of process
+
